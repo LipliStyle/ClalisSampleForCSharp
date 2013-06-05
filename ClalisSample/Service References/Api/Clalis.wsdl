@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://liplis.mine.nu/XMLSchema" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://liplis.mine.nu/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://liplis.mine.nu/XMLSchema">
+      <s:element name="clalisMecabFull">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisMecabFullResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisMecabFullResult" type="tns:resMecabResultFull" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resMecabResultFull">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfMsgMecabResultFull" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMsgMecabResultFull">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="msgMecabResultFull" nillable="true" type="tns:msgMecabResultFull" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="msgMecabResultFull">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="infetted1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="infetted2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prototype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="read" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pronunciation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisMecab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisMecabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisMecabResult" type="tns:resMecabResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resMecabResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfMsgMecabResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMsgMecabResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="msgMecabResult" nillable="true" type="tns:msgMecabResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="msgMecabResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisWakachiGaki">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisWakachiGakiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisWakachiGakiResult" type="tns:resWakachiGakiResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resWakachiGakiResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisMeishiList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisMeishiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisMeishiListResult" type="tns:resMeishiList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resMeishiList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisTone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toneFileUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisToneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisToneResult" type="tns:resTone" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resTone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisEmotional">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisEmotionalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisEmotionalResult" type="tns:resEmotional" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resEmotional">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfMsgLeafAndEmotion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMsgLeafAndEmotion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="msgLeafAndEmotion" nillable="true" type="tns:msgLeafAndEmotion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="msgLeafAndEmotion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="emotion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="point" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisToneEmotional">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toneFileUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisToneEmotionalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisToneEmotionalResult" type="tns:resEmotional" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisWebExtractJp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisWebExtractJpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisWebExtractJpResult" type="tns:resWebSummary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resWebSummary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisWebExtractJpSentenceList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisWebExtractJpSentenceListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisWebExtractJpSentenceListResult" type="tns:resWebSummaryList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resWebSummaryList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clalisWebExtractJpSentenceRelevanceList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisWebExtractJpSentenceRelevanceListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisWebExtractJpSentenceRelevanceListResult" type="tns:resWebSummaryList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisGetNewWordList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clalisGetNewWordListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clalisGetNewWordListResult" type="tns:resNewWordList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resNewWordList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfMsgNewWord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMsgNewWord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="msgNewWord" nillable="true" type="tns:msgNewWord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="msgNewWord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="createDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="resMecabResultFull" nillable="true" type="tns:resMecabResultFull" />
+      <s:element name="resMecabResult" nillable="true" type="tns:resMecabResult" />
+      <s:element name="resWakachiGakiResult" nillable="true" type="tns:resWakachiGakiResult" />
+      <s:element name="resMeishiList" nillable="true" type="tns:resMeishiList" />
+      <s:element name="resTone" nillable="true" type="tns:resTone" />
+      <s:element name="resEmotional" nillable="true" type="tns:resEmotional" />
+      <s:element name="resWebSummary" nillable="true" type="tns:resWebSummary" />
+      <s:element name="resWebSummaryList" nillable="true" type="tns:resWebSummaryList" />
+      <s:element name="resNewWordList" nillable="true" type="tns:resNewWordList" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="clalisMecabFullSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisMecabFull" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabFullSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisMecabFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisMecab" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisMecabResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisWakachiGaki" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisWakachiGakiResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisMeishiList" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisMeishiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisTone" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisToneResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisEmotionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisToneEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisToneEmotionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJp" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJpResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJpSentenceList" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJpSentenceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJpSentenceRelevanceList" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisWebExtractJpSentenceRelevanceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListSoapIn">
+    <wsdl:part name="parameters" element="tns:clalisGetNewWordList" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListSoapOut">
+    <wsdl:part name="parameters" element="tns:clalisGetNewWordListResponse" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabFullHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabFullHttpGetOut">
+    <wsdl:part name="Body" element="tns:resMecabResultFull" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabHttpGetOut">
+    <wsdl:part name="Body" element="tns:resMecabResult" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiHttpGetOut">
+    <wsdl:part name="Body" element="tns:resWakachiGakiResult" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListHttpGetOut">
+    <wsdl:part name="Body" element="tns:resMeishiList" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="toneFileUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneHttpGetOut">
+    <wsdl:part name="Body" element="tns:resTone" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalHttpGetOut">
+    <wsdl:part name="Body" element="tns:resEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="toneFileUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalHttpGetOut">
+    <wsdl:part name="Body" element="tns:resEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpHttpGetIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpHttpGetOut">
+    <wsdl:part name="Body" element="tns:resWebSummary" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListHttpGetIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListHttpGetOut">
+    <wsdl:part name="Body" element="tns:resWebSummaryList" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListHttpGetIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListHttpGetOut">
+    <wsdl:part name="Body" element="tns:resWebSummaryList" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListHttpGetIn">
+    <wsdl:part name="number" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListHttpGetOut">
+    <wsdl:part name="Body" element="tns:resNewWordList" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabFullHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabFullHttpPostOut">
+    <wsdl:part name="Body" element="tns:resMecabResultFull" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMecabHttpPostOut">
+    <wsdl:part name="Body" element="tns:resMecabResult" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWakachiGakiHttpPostOut">
+    <wsdl:part name="Body" element="tns:resWakachiGakiResult" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisMeishiListHttpPostOut">
+    <wsdl:part name="Body" element="tns:resMeishiList" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="toneFileUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneHttpPostOut">
+    <wsdl:part name="Body" element="tns:resTone" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisEmotionalHttpPostOut">
+    <wsdl:part name="Body" element="tns:resEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="toneFileUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisToneEmotionalHttpPostOut">
+    <wsdl:part name="Body" element="tns:resEmotional" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpHttpPostIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpHttpPostOut">
+    <wsdl:part name="Body" element="tns:resWebSummary" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListHttpPostIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceListHttpPostOut">
+    <wsdl:part name="Body" element="tns:resWebSummaryList" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListHttpPostIn">
+    <wsdl:part name="url" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisWebExtractJpSentenceRelevanceListHttpPostOut">
+    <wsdl:part name="Body" element="tns:resWebSummaryList" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListHttpPostIn">
+    <wsdl:part name="number" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clalisGetNewWordListHttpPostOut">
+    <wsdl:part name="Body" element="tns:resNewWordList" />
+  </wsdl:message>
+  <wsdl:portType name="ClalisSoap">
+    <wsdl:operation name="clalisMecabFull">
+      <wsdl:input message="tns:clalisMecabFullSoapIn" />
+      <wsdl:output message="tns:clalisMecabFullSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <wsdl:input message="tns:clalisMecabSoapIn" />
+      <wsdl:output message="tns:clalisMecabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <wsdl:input message="tns:clalisWakachiGakiSoapIn" />
+      <wsdl:output message="tns:clalisWakachiGakiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <wsdl:input message="tns:clalisMeishiListSoapIn" />
+      <wsdl:output message="tns:clalisMeishiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <wsdl:input message="tns:clalisToneSoapIn" />
+      <wsdl:output message="tns:clalisToneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <wsdl:input message="tns:clalisEmotionalSoapIn" />
+      <wsdl:output message="tns:clalisEmotionalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <wsdl:input message="tns:clalisToneEmotionalSoapIn" />
+      <wsdl:output message="tns:clalisToneEmotionalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <wsdl:input message="tns:clalisWebExtractJpSoapIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceListSoapIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceRelevanceListSoapIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceRelevanceListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <wsdl:input message="tns:clalisGetNewWordListSoapIn" />
+      <wsdl:output message="tns:clalisGetNewWordListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClalisHttpGet">
+    <wsdl:operation name="clalisMecabFull">
+      <wsdl:input message="tns:clalisMecabFullHttpGetIn" />
+      <wsdl:output message="tns:clalisMecabFullHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <wsdl:input message="tns:clalisMecabHttpGetIn" />
+      <wsdl:output message="tns:clalisMecabHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <wsdl:input message="tns:clalisWakachiGakiHttpGetIn" />
+      <wsdl:output message="tns:clalisWakachiGakiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <wsdl:input message="tns:clalisMeishiListHttpGetIn" />
+      <wsdl:output message="tns:clalisMeishiListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <wsdl:input message="tns:clalisToneHttpGetIn" />
+      <wsdl:output message="tns:clalisToneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <wsdl:input message="tns:clalisEmotionalHttpGetIn" />
+      <wsdl:output message="tns:clalisEmotionalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <wsdl:input message="tns:clalisToneEmotionalHttpGetIn" />
+      <wsdl:output message="tns:clalisToneEmotionalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <wsdl:input message="tns:clalisWebExtractJpHttpGetIn" />
+      <wsdl:output message="tns:clalisWebExtractJpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceListHttpGetIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceRelevanceListHttpGetIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceRelevanceListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <wsdl:input message="tns:clalisGetNewWordListHttpGetIn" />
+      <wsdl:output message="tns:clalisGetNewWordListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClalisHttpPost">
+    <wsdl:operation name="clalisMecabFull">
+      <wsdl:input message="tns:clalisMecabFullHttpPostIn" />
+      <wsdl:output message="tns:clalisMecabFullHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <wsdl:input message="tns:clalisMecabHttpPostIn" />
+      <wsdl:output message="tns:clalisMecabHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <wsdl:input message="tns:clalisWakachiGakiHttpPostIn" />
+      <wsdl:output message="tns:clalisWakachiGakiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <wsdl:input message="tns:clalisMeishiListHttpPostIn" />
+      <wsdl:output message="tns:clalisMeishiListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <wsdl:input message="tns:clalisToneHttpPostIn" />
+      <wsdl:output message="tns:clalisToneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <wsdl:input message="tns:clalisEmotionalHttpPostIn" />
+      <wsdl:output message="tns:clalisEmotionalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <wsdl:input message="tns:clalisToneEmotionalHttpPostIn" />
+      <wsdl:output message="tns:clalisToneEmotionalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <wsdl:input message="tns:clalisWebExtractJpHttpPostIn" />
+      <wsdl:output message="tns:clalisWebExtractJpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceListHttpPostIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <wsdl:input message="tns:clalisWebExtractJpSentenceRelevanceListHttpPostIn" />
+      <wsdl:output message="tns:clalisWebExtractJpSentenceRelevanceListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <wsdl:input message="tns:clalisGetNewWordListHttpPostIn" />
+      <wsdl:output message="tns:clalisGetNewWordListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClalisSoap" type="tns:ClalisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="clalisMecabFull">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMecabFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMecab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWakachiGaki" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMeishiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisTone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisEmotional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisToneEmotional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJpSentenceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJpSentenceRelevanceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisGetNewWordList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisSoap12" type="tns:ClalisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="clalisMecabFull">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMecabFull" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMecab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWakachiGaki" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisMeishiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisTone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisEmotional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisToneEmotional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJpSentenceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisWebExtractJpSentenceRelevanceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/clalisGetNewWordList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisHttpGet" type="tns:ClalisHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="clalisMecabFull">
+      <http:operation location="/clalisMecabFull" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <http:operation location="/clalisMecab" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <http:operation location="/clalisWakachiGaki" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <http:operation location="/clalisMeishiList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <http:operation location="/clalisTone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <http:operation location="/clalisEmotional" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <http:operation location="/clalisToneEmotional" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <http:operation location="/clalisWebExtractJp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <http:operation location="/clalisWebExtractJpSentenceList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <http:operation location="/clalisWebExtractJpSentenceRelevanceList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <http:operation location="/clalisGetNewWordList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisHttpPost" type="tns:ClalisHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="clalisMecabFull">
+      <http:operation location="/clalisMecabFull" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMecab">
+      <http:operation location="/clalisMecab" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWakachiGaki">
+      <http:operation location="/clalisWakachiGaki" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisMeishiList">
+      <http:operation location="/clalisMeishiList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisTone">
+      <http:operation location="/clalisTone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisEmotional">
+      <http:operation location="/clalisEmotional" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisToneEmotional">
+      <http:operation location="/clalisToneEmotional" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJp">
+      <http:operation location="/clalisWebExtractJp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceList">
+      <http:operation location="/clalisWebExtractJpSentenceList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisWebExtractJpSentenceRelevanceList">
+      <http:operation location="/clalisWebExtractJpSentenceRelevanceList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clalisGetNewWordList">
+      <http:operation location="/clalisGetNewWordList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Clalis">
+    <wsdl:port name="ClalisSoap" binding="tns:ClalisSoap">
+      <soap:address location="http://liplis.mine.nu/Clalis/v30/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisSoap12" binding="tns:ClalisSoap12">
+      <soap12:address location="http://liplis.mine.nu/Clalis/v30/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisHttpGet" binding="tns:ClalisHttpGet">
+      <http:address location="http://liplis.mine.nu/Clalis/v30/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisHttpPost" binding="tns:ClalisHttpPost">
+      <http:address location="http://liplis.mine.nu/Clalis/v30/Soap/Clalis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86106A5C-8B31-4CCA-9D3E-6AC627C99E6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clalis</RootNamespace>
+    <AssemblyName>ClalisSample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\EntryPoint.cs" />
+    <Compile Include="Activity\SubActivitySoap\frmClalisMecab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisMecab.Designer.cs">
+      <DependentUpon>frmClalisMecab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisMecabPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisMecabPlus.Designer.cs">
+      <DependentUpon>frmClalisMecabPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisEmotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisEmotion.Designer.cs">
+      <DependentUpon>frmClalisEmotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisTone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisTone.Designer.cs">
+      <DependentUpon>frmClalisTone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisToneEmotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisToneEmotion.Designer.cs">
+      <DependentUpon>frmClalisToneEmotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJp.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceList.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceRelevanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceRelevanceList.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisEmotionXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisEmotionXml.Designer.cs">
+      <DependentUpon>frmClalisEmotionXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisMecabXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisMecabXml.Designer.cs">
+      <DependentUpon>frmClalisMecabXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisMecabPlusXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisMecabPlusXml.Designer.cs">
+      <DependentUpon>frmClalisMecabPlusXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisToneXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisToneXml.Designer.cs">
+      <DependentUpon>frmClalisToneXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisToneEmotionXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisToneEmotionXml.Designer.cs">
+      <DependentUpon>frmClalisToneEmotionXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpXml.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceListXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceListXml.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceListXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceRelevanceListXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceRelevanceListXml.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceListXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisEmotionJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisEmotionJson.Designer.cs">
+      <DependentUpon>frmClalisEmotionJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisMecabJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisMecabJson.Designer.cs">
+      <DependentUpon>frmClalisMecabJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisMecabPlusJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisMecabPlusJson.Designer.cs">
+      <DependentUpon>frmClalisMecabPlusJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisToneJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisToneJson.Designer.cs">
+      <DependentUpon>frmClalisToneJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisToneEmotionJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisToneEmotionJson.Designer.cs">
+      <DependentUpon>frmClalisToneEmotionJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpJson.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceListJson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceListJson.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceListJson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceRelevanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceRelevanceList.Designer.cs">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Web\HttpPost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Api\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Activity\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisMecab.resx">
+      <DependentUpon>frmClalisMecab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisMecabPlus.resx">
+      <DependentUpon>frmClalisMecabPlus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisEmotion.resx">
+      <DependentUpon>frmClalisEmotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisTone.resx">
+      <DependentUpon>frmClalisTone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisToneEmotion.resx">
+      <DependentUpon>frmClalisToneEmotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisWebExtractJp.resx">
+      <DependentUpon>frmClalisWebExtractJp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceList.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisWebExtractJpSentenceRelevanceList.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisEmotionXml.resx">
+      <DependentUpon>frmClalisEmotionXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisMecabXml.resx">
+      <DependentUpon>frmClalisMecabXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisMecabPlusXml.resx">
+      <DependentUpon>frmClalisMecabPlusXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisToneXml.resx">
+      <DependentUpon>frmClalisToneXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisToneEmotionXml.resx">
+      <DependentUpon>frmClalisToneEmotionXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisWebExtractJpXml.resx">
+      <DependentUpon>frmClalisWebExtractJpXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceListXml.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceListXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityXml\frmClalisWebExtractJpSentenceRelevanceListXml.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceListXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisEmotionJson.resx">
+      <DependentUpon>frmClalisEmotionJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisMecabJson.resx">
+      <DependentUpon>frmClalisMecabJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisMecabPlusJson.resx">
+      <DependentUpon>frmClalisMecabPlusJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisToneJson.resx">
+      <DependentUpon>frmClalisToneJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisToneEmotionJson.resx">
+      <DependentUpon>frmClalisToneEmotionJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisWebExtractJpJson.resx">
+      <DependentUpon>frmClalisWebExtractJpJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceListJson.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceListJson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson\frmClalisWebExtractJpSentenceRelevanceList.resx">
+      <DependentUpon>frmClalisWebExtractJpSentenceRelevanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Api\Clalis.Api.resEmotional.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resMecabResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resMecabResultFull.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resMeishiList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resNewWordList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resTone.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resWakachiGakiResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resWebSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.Api.resWebSummaryList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api\Clalis.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api\Clalis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
