@@ -15,7 +15,7 @@ APIはSOAP、JSON、XMLのインターフェースを用意しています。
 　
 ライセンス
 ------
-Copyright © 2013 LipliStyle sachin http://liplis.mine.nu/
+Copyright © 2013 LipliStyle sachin http://liplis.mine.nu/  
 MIT License
 
 ご注意
