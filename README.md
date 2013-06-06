@@ -87,7 +87,6 @@ https://code.google.com/p/mecab/
                 dgv.Rows.Add(new object[] { msg.idx, msg.name, msg.pos, msg.pos1 });
             }
         }
-    }}　
 　
 形態素解析 ClalisMecabPlus
 ------
@@ -153,7 +152,6 @@ https://code.google.com/p/mecab/
 テキストボックスに表示する処理になっています。
 
 ■サンプル  
-
         private void run()
         {
             resTone result;
@@ -205,7 +203,6 @@ Web日本語抽出 ClalisWebExtractJp
 テキストボックスに表示する処理になっています。
 
 ■サンプル  
-
         private void run()
         {
             resWebSummary result;
@@ -230,7 +227,6 @@ Web日本語文章抽出 ClalisWebExtractJpSentenceList
 データグリッドに表示する処理になっています。  
 
 ■サンプル　　
-
         private void run()
         {
             resWebSummaryList result;
@@ -259,7 +255,6 @@ Web日本語重要文章抽出 ClalisWebExtractJpSentenceRelevanceList
 データグリッドに表示する処理になっています。  
 
 ■サンプル  
-
         private void run()
         {
             resWebSummaryList result;
