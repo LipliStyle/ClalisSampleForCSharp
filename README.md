@@ -192,7 +192,7 @@ https://code.google.com/p/mecab/
 　
 Web日本語抽出 ClalisWebExtractJp
 ------
-* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/.7gif "UI")
+* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/7.gif "UI")
 
 ■概要  
 対象のURLのサイトから日本語を抽出して返します。
@@ -217,7 +217,7 @@ Web日本語抽出 ClalisWebExtractJp
 　
 Web日本語文章抽出 ClalisWebExtractJpSentenceList
 ------
-* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/.8gif "UI")
+* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/8.gif "UI")
 
 ■概要  
 対象のURLのサイトから日本語を文章ごとに抽出して返します。  
@@ -245,7 +245,7 @@ Web日本語文章抽出 ClalisWebExtractJpSentenceList
 　
 Web日本語重要文章抽出 ClalisWebExtractJpSentenceRelevanceList
 ------
-* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/.9gif "UI")
+* ![picService2](http://liplis.mine.nu/lipliswiki/webroot/image/common/ClalisSample/CS/9.gif "UI")
 
 ■概要  
 対象のURLのサイトから日本語を文章ごとに抽出し、  
