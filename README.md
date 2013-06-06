@@ -22,6 +22,10 @@ APIはSOAP、JSON、XMLのインターフェースを用意しています。
  ・上記の著作権表示を記載して下さい。  
  ・上記の２項に同意頂ければ自由に使用して頂けます。  
 
+使用ライブラリ
+-------
+本サンプルではJsonのパースに「Json.net」を使用しています。
+http://james.newtonking.com/projects/json-net.aspx
 
 ご注意
 ------
