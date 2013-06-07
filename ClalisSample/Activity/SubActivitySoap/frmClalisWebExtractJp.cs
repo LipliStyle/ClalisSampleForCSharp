@@ -3,7 +3,7 @@
 //  概要      : Clalis Web日本語抽出メソッドの使用サンプル
 //
 //ClalisSample
-// Copyright  : 2011-2013 LipliStyle. All Rights Reserved.
+// Copyright  : 2011-2013 LipliStyle
 // 
 // ライセンス : MIT License
 // ・本ソフトウェアは無保証です。作者は責任を追いません。
