@@ -1,6 +1,6 @@
 ﻿//=======================================================================
 //  ClassName : frmMain
-//  概要      : Clalis Sample For C#
+//  概要      : Clalis Sample For C# 4.1
 //
 //
 // 本サンプルを用いた結果生じた損害について、作者は責任を追いません。 
@@ -17,39 +17,26 @@
 //  Clalis
 //  Copyright(c) 2011-2015 LipliStyle さちん
 //=======================================================================
-using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
 namespace Clalis.Activity
 {
-    public partial class frmMain : Form
+    public partial class frmClalis41 : Form
     {
-        public frmMain()
+        #region コンストラクター
+        public frmClalis41()
         {
             InitializeComponent();
         }
-
-        #region イベントハンドラ
-        private void btnClalis31_Click(object sender, EventArgs e)
-        {
-            using (frmClalis31 f = new frmClalis31())
-            {
-                f.ShowDialog();
-            }
-        }
-
-        private void btnClalis41_Click(object sender, EventArgs e)
-        {
-            using (frmClalis41 f = new frmClalis41())
-            {
-                f.ShowDialog();
-            }
-        }
-
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         #endregion
+        
 
     }
 }

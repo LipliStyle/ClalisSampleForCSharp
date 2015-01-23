@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Clalis.Activity.EntryPoint</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\Libs\Newtonsoft.Json.dll</HintPath>
@@ -51,13 +54,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity\frmClalis31.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\frmClalis31.Designer.cs">
+      <DependentUpon>frmClalis31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\EntryPoint.cs" />
+    <Compile Include="Activity\frmClalis41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\frmClalis41.Designer.cs">
+      <DependentUpon>frmClalis41.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activity\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activity\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Activity\EntryPoint.cs" />
     <Compile Include="Activity\SubActivitySoap\frmClalisMecab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +224,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Activity\frmClalis31.resx">
+      <DependentUpon>frmClalis31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\frmClalis41.resx">
+      <DependentUpon>frmClalis41.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activity\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
