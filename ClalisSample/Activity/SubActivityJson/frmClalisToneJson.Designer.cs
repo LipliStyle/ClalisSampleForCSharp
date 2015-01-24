@@ -227,17 +227,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtInput;
-        private System.Windows.Forms.GroupBox grpInput;
-        private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.GroupBox grpResult;
-        private System.Windows.Forms.GroupBox grpCtl;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Button btnEnd;
-        private System.Windows.Forms.SplitContainer spl;
-        private System.Windows.Forms.TextBox txtToneUrl;
-        private System.Windows.Forms.TextBox txtResult;
-        private System.Windows.Forms.SplitContainer spl_;
-        private System.Windows.Forms.TextBox txtResult_;
+        protected System.Windows.Forms.TextBox txtResult_;
+        protected System.Windows.Forms.TextBox txtInput;
+        protected System.Windows.Forms.GroupBox grpInput;
+        protected System.Windows.Forms.Button btnRun;
+        protected System.Windows.Forms.GroupBox grpResult;
+        protected System.Windows.Forms.GroupBox grpCtl;
+        protected System.Windows.Forms.Button btnCrear;
+        protected System.Windows.Forms.Button btnEnd;
+        protected System.Windows.Forms.SplitContainer spl;
+        protected System.Windows.Forms.TextBox txtToneUrl;
+        protected System.Windows.Forms.TextBox txtResult;
+        protected System.Windows.Forms.SplitContainer spl_;
     }
 }

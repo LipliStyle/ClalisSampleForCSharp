@@ -48,6 +48,14 @@ namespace Clalis.Activity.SubActivityJson
 {
     public partial class frmClalisMecabJson : Form
     {
+        ///------------------------------------
+        ///プロパティ
+        protected string url = "";
+
+        ///------------------------------------
+        ///URL定義
+        private const string API_URL = "http://liplis.mine.nu/Clalis/v30/Post/Json/clalisMecab.aspx";
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -55,6 +63,7 @@ namespace Clalis.Activity.SubActivityJson
         public frmClalisMecabJson()
         {
             InitializeComponent();
+            this.url = API_URL;
         }
         #endregion
         
@@ -65,9 +74,9 @@ namespace Clalis.Activity.SubActivityJson
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnRun_Click(object sender, EventArgs e)
+        protected virtual void btnRun_Click(object sender, EventArgs e)
         {
-            run();
+            run(url);
         }
 
         /// <summary>
@@ -75,7 +84,7 @@ namespace Clalis.Activity.SubActivityJson
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCrear_Click(object sender, EventArgs e)
+        protected void btnCrear_Click(object sender, EventArgs e)
         {
             txtInput.Text = "";
             txtResult.Text = "";
@@ -87,7 +96,7 @@ namespace Clalis.Activity.SubActivityJson
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEnd_Click(object sender, EventArgs e)
+        protected void btnEnd_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -97,14 +106,14 @@ namespace Clalis.Activity.SubActivityJson
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private void run()
+        protected void run(string url)
         {
             //ポストデータの作成
             NameValueCollection ps = new NameValueCollection();
             ps.Add("sentence", System.Web.HttpUtility.UrlEncode(txtInput.Text, Encoding.GetEncoding("UTF-8")));
 
             //結果の取得
-            string jsonText = HttpPost.sendPost("http://liplis.mine.nu/Clalis/v30/Post/Json/clalisMecab.aspx", ps);
+            string jsonText = HttpPost.sendPost(url, ps);
 
             //APIの結果受け取り用クラス
             resMecabResult result = JsonConvert.DeserializeObject<resMecabResult>(jsonText);

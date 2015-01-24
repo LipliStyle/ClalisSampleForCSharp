@@ -223,18 +223,19 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpInput;
-        private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.GroupBox grpResult;
-        private System.Windows.Forms.GroupBox grpCtl;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Button btnEnd;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn word;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emotion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn point;
-        private System.Windows.Forms.SplitContainer spl;
-        private System.Windows.Forms.TextBox txtInput;
-        private System.Windows.Forms.TextBox txtToneUrl;
+        protected System.Windows.Forms.GroupBox grpInput;
+        protected System.Windows.Forms.Button btnRun;
+        protected System.Windows.Forms.GroupBox grpResult;
+        protected System.Windows.Forms.GroupBox grpCtl;
+        protected System.Windows.Forms.Button btnCrear;
+        protected System.Windows.Forms.Button btnEnd;
+        protected System.Windows.Forms.DataGridView dgv;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn word;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn emotion;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn point;
+        protected System.Windows.Forms.SplitContainer spl;
+        protected System.Windows.Forms.TextBox txtInput;
+        protected System.Windows.Forms.TextBox txtToneUrl;
+
     }
 }

@@ -36,7 +36,7 @@
             // btnEnd
             // 
             this.btnEnd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnEnd.Location = new System.Drawing.Point(12, 200);
+            this.btnEnd.Location = new System.Drawing.Point(12, 124);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(260, 50);
             this.btnEnd.TabIndex = 5;
@@ -70,12 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(284, 186);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnClalis41);
             this.Controls.Add(this.btnClalis31);
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "ClalisAPI C# サンプル";
             this.ResumeLayout(false);
 
         }

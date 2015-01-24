@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://liplis.mine.nu/XMLSchema/41" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://liplis.mine.nu/XMLSchema/41" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://liplis.mine.nu/XMLSchema/41">
+      <s:element name="ClalisMecab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisMecabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClalisMecabResult" type="tns:resMecabResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="resMecabResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="resWordList" type="tns:ArrayOfMsgMecabResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMsgMecabResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="msgMecabResult" nillable="true" type="tns:msgMecabResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="msgMecabResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClalisEmotional">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisEmotionalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClalisEmotionalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisToneEmotional">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisToneEmotionalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClalisToneEmotionalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisTone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sentence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClalisToneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClalisToneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resMecabResult" nillable="true" type="tns:resMecabResult" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ClalisMecabSoapIn">
+    <wsdl:part name="parameters" element="tns:ClalisMecab" />
+  </wsdl:message>
+  <wsdl:message name="ClalisMecabSoapOut">
+    <wsdl:part name="parameters" element="tns:ClalisMecabResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalSoapIn">
+    <wsdl:part name="parameters" element="tns:ClalisEmotional" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalSoapOut">
+    <wsdl:part name="parameters" element="tns:ClalisEmotionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalSoapIn">
+    <wsdl:part name="parameters" element="tns:ClalisToneEmotional" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalSoapOut">
+    <wsdl:part name="parameters" element="tns:ClalisToneEmotionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneSoapIn">
+    <wsdl:part name="parameters" element="tns:ClalisTone" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneSoapOut">
+    <wsdl:part name="parameters" element="tns:ClalisToneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClalisMecabHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisMecabHttpGetOut">
+    <wsdl:part name="Body" element="tns:resMecabResult" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="tone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneHttpGetIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="tone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisMecabHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisMecabHttpPostOut">
+    <wsdl:part name="Body" element="tns:resMecabResult" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisEmotionalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="tone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneEmotionalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneHttpPostIn">
+    <wsdl:part name="sentence" type="s:string" />
+    <wsdl:part name="tone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClalisToneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ClalisSoap">
+    <wsdl:operation name="ClalisMecab">
+      <wsdl:input message="tns:ClalisMecabSoapIn" />
+      <wsdl:output message="tns:ClalisMecabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <wsdl:input message="tns:ClalisEmotionalSoapIn" />
+      <wsdl:output message="tns:ClalisEmotionalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <wsdl:input message="tns:ClalisToneEmotionalSoapIn" />
+      <wsdl:output message="tns:ClalisToneEmotionalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <wsdl:input message="tns:ClalisToneSoapIn" />
+      <wsdl:output message="tns:ClalisToneSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClalisHttpGet">
+    <wsdl:operation name="ClalisMecab">
+      <wsdl:input message="tns:ClalisMecabHttpGetIn" />
+      <wsdl:output message="tns:ClalisMecabHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <wsdl:input message="tns:ClalisEmotionalHttpGetIn" />
+      <wsdl:output message="tns:ClalisEmotionalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <wsdl:input message="tns:ClalisToneEmotionalHttpGetIn" />
+      <wsdl:output message="tns:ClalisToneEmotionalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <wsdl:input message="tns:ClalisToneHttpGetIn" />
+      <wsdl:output message="tns:ClalisToneHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClalisHttpPost">
+    <wsdl:operation name="ClalisMecab">
+      <wsdl:input message="tns:ClalisMecabHttpPostIn" />
+      <wsdl:output message="tns:ClalisMecabHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <wsdl:input message="tns:ClalisEmotionalHttpPostIn" />
+      <wsdl:output message="tns:ClalisEmotionalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <wsdl:input message="tns:ClalisToneEmotionalHttpPostIn" />
+      <wsdl:output message="tns:ClalisToneEmotionalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <wsdl:input message="tns:ClalisToneHttpPostIn" />
+      <wsdl:output message="tns:ClalisToneHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClalisSoap" type="tns:ClalisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClalisMecab">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisMecab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisEmotional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisToneEmotional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <soap:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisTone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisSoap12" type="tns:ClalisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClalisMecab">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisMecab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisEmotional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisToneEmotional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <soap12:operation soapAction="http://liplis.mine.nu/XMLSchema/41/ClalisTone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisHttpGet" type="tns:ClalisHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ClalisMecab">
+      <http:operation location="/ClalisMecab" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <http:operation location="/ClalisEmotional" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <http:operation location="/ClalisToneEmotional" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <http:operation location="/ClalisTone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalisHttpPost" type="tns:ClalisHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ClalisMecab">
+      <http:operation location="/ClalisMecab" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisEmotional">
+      <http:operation location="/ClalisEmotional" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisToneEmotional">
+      <http:operation location="/ClalisToneEmotional" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClalisTone">
+      <http:operation location="/ClalisTone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Clalis">
+    <wsdl:port name="ClalisSoap" binding="tns:ClalisSoap">
+      <soap:address location="http://liplis.mine.nu/Clalis/v41/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisSoap12" binding="tns:ClalisSoap12">
+      <soap12:address location="http://liplis.mine.nu/Clalis/v41/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisHttpGet" binding="tns:ClalisHttpGet">
+      <http:address location="http://liplis.mine.nu/Clalis/v41/Soap/Clalis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalisHttpPost" binding="tns:ClalisHttpPost">
+      <http:address location="http://liplis.mine.nu/Clalis/v41/Soap/Clalis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

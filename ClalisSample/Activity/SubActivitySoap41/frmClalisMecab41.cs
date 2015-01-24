@@ -1,91 +1,52 @@
 ﻿//=======================================================================
-//  ClassName : frmClalisEmotion
-//  概要      : Clalis 感情付与メソッドの使用サンプル
+//  ClassName : frmClalisMecab41
+//  概要      : Clalis 形態素解析メソッドの使用サンプル
 //
 //ClalisSample
-// Copyright  : 2011-2013 LipliStyle
+// Copyright  : 2011-2015 LipliStyle
 // 
 // ライセンス : MIT License
 // ・本ソフトウェアは無保証です。作者は責任を追いません。
 // ・上記の著作権表示を記載して下さい。
 // ・上記の２項に同意頂ければ自由に使用して頂けます。
 //=======================================================================
-using System;
-using System.Windows.Forms;
-using Clalis.Api;
+using Clalis.Activity.SubActivitySoap;
+using Clalis.Api41;
 
-namespace Clalis.Activity.SubActivitySoap
+namespace Clalis.Activity.SubActivitySoap41
 {
-    public partial class frmClalisEmotion : Form
+    public partial class frmClalisMecab41 : frmClalisMecab
     {
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        #region frmClalisEmotion
-        public frmClalisEmotion()
+        #region コンストラクター
+        public frmClalisMecab41()
         {
             InitializeComponent();
         }
         #endregion
         
-        #region イベントハンドラ
-
-        /// <summary>
-        /// 実行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnRun_Click(object sender, EventArgs e)
-        {
-            run();
-        }
-
-        /// <summary>
-        /// クリア
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            txtInput.Text = "";
-            dgv.Rows.Clear();
-        }
-
-        /// <summary>
-        /// 終了
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        #endregion
-
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        protected virtual void run()
+        private override void run()
         {
             //APIの結果受け取り用クラス。
-            resEmotional result;
+            resMecabResult result;
 
             //Clalisに送信し、結果を得ます。
             using (ClalisSoapClient client = new ClalisSoapClient())
             {
-                //「resEmotional」クラスで結果が帰ってきます。
-                result = client.clalisEmotional(txtInput.Text);
+                //「resMecabResult」クラスで結果が帰ってきます。
+                result = client.ClalisMecab(txtInput.Text);
             }
 
-            //追加前にクリアしておきます。
+            //追加前にクリアしておく
             dgv.Rows.Clear();
 
-            //resEmotionalクラスの「resWordList」プロパティに結果が格納されています。
-            foreach (msgLeafAndEmotion msg in result.resWordList)
+            //resMecabResultクラスの「resWordList」プロパティに結果が格納されています。
+            foreach (msgMecabResult msg in result.resWordList)
             {
                 //1個づつ取り出してデータグリッドに入れています。
-                dgv.Rows.Add(new object[] {msg.name, msg.emotion, msg.point });
+                dgv.Rows.Add(new object[] { msg.idx, msg.name, msg.pos, msg.pos1 });
             }
         }
 

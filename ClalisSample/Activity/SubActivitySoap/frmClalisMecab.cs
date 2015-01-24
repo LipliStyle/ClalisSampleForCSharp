@@ -66,7 +66,7 @@ namespace Clalis.Activity.SubActivitySoap
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private void run()
+        private virtual void run()
         {
             //APIの結果受け取り用クラス。
             resMecabResult result;
@@ -75,7 +75,7 @@ namespace Clalis.Activity.SubActivitySoap
             using (ClalisSoapClient client = new ClalisSoapClient())
             {
                 //「resMecabResult」クラスで結果が帰ってきます。
-                result = client.clalisMecab(txtInput.Text);
+                result = client.ClalisMecab(txtInput.Text);
             }
 
             //追加前にクリアしておく

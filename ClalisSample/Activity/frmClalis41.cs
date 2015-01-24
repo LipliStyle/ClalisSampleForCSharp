@@ -25,6 +25,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Clalis.Activity.SubActivityJson;
+using Clalis.Activity.SubActivityJson41;
 
 namespace Clalis.Activity
 {
@@ -36,6 +38,76 @@ namespace Clalis.Activity
             InitializeComponent();
         }
         #endregion
+
+        private void btnClalisMecabJson_Click(object sender, EventArgs e)
+        {
+            using (frmClalisMecabJson41 f = new frmClalisMecabJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisEmotionJson_Click(object sender, EventArgs e)
+        {
+            using (frmClalisEmotionJson41 f = new frmClalisEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisToneJson_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneJson41 f = new frmClalisToneJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisToneEmotionJson_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneEmotionJson41 f = new frmClalisToneEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisMecabSoap_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneEmotionJson41 f = new frmClalisToneEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisEmotionSoap_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneEmotionJson41 f = new frmClalisToneEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisToneSoap_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneEmotionJson41 f = new frmClalisToneEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnClalisToneEmotionSoap_Click(object sender, EventArgs e)
+        {
+            using (frmClalisToneEmotionJson41 f = new frmClalisToneEmotionJson41())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         
 
     }

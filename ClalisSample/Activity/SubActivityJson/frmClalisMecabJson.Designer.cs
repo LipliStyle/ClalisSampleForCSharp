@@ -33,6 +33,8 @@
             this.grpInput = new System.Windows.Forms.GroupBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.grpResult = new System.Windows.Forms.GroupBox();
+            this.spl = new System.Windows.Forms.SplitContainer();
+            this.txtResult = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,16 +43,14 @@
             this.grpCtl = new System.Windows.Forms.GroupBox();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
-            this.spl = new System.Windows.Forms.SplitContainer();
-            this.txtResult = new System.Windows.Forms.TextBox();
             this.grpInput.SuspendLayout();
             this.grpResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.grpCtl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spl)).BeginInit();
             this.spl.Panel1.SuspendLayout();
             this.spl.Panel2.SuspendLayout();
             this.spl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.grpCtl.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
@@ -96,6 +96,32 @@
             this.grpResult.TabIndex = 4;
             this.grpResult.TabStop = false;
             this.grpResult.Text = "結果";
+            // 
+            // spl
+            // 
+            this.spl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spl.Location = new System.Drawing.Point(3, 15);
+            this.spl.Name = "spl";
+            // 
+            // spl.Panel1
+            // 
+            this.spl.Panel1.Controls.Add(this.txtResult);
+            // 
+            // spl.Panel2
+            // 
+            this.spl.Panel2.Controls.Add(this.dgv);
+            this.spl.Size = new System.Drawing.Size(778, 478);
+            this.spl.SplitterDistance = 389;
+            this.spl.TabIndex = 2;
+            // 
+            // txtResult
+            // 
+            this.txtResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtResult.Location = new System.Drawing.Point(0, 0);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(389, 478);
+            this.txtResult.TabIndex = 1;
             // 
             // dgv
             // 
@@ -177,32 +203,6 @@
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
-            // spl
-            // 
-            this.spl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spl.Location = new System.Drawing.Point(3, 15);
-            this.spl.Name = "spl";
-            // 
-            // spl.Panel1
-            // 
-            this.spl.Panel1.Controls.Add(this.txtResult);
-            // 
-            // spl.Panel2
-            // 
-            this.spl.Panel2.Controls.Add(this.dgv);
-            this.spl.Size = new System.Drawing.Size(778, 478);
-            this.spl.SplitterDistance = 389;
-            this.spl.TabIndex = 2;
-            // 
-            // txtResult
-            // 
-            this.txtResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtResult.Location = new System.Drawing.Point(0, 0);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(389, 478);
-            this.txtResult.TabIndex = 1;
-            // 
             // frmClalisMecabJson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -216,32 +216,33 @@
             this.grpInput.ResumeLayout(false);
             this.grpInput.PerformLayout();
             this.grpResult.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.grpCtl.ResumeLayout(false);
             this.spl.Panel1.ResumeLayout(false);
             this.spl.Panel1.PerformLayout();
             this.spl.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spl)).EndInit();
             this.spl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.grpCtl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtInput;
-        private System.Windows.Forms.GroupBox grpInput;
-        private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.GroupBox grpResult;
-        private System.Windows.Forms.GroupBox grpCtl;
-        private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Button btnEnd;
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idx;
-        private System.Windows.Forms.DataGridViewTextBoxColumn word;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pos1;
-        private System.Windows.Forms.SplitContainer spl;
-        private System.Windows.Forms.TextBox txtResult;
+        protected System.Windows.Forms.TextBox txtInput;
+        protected System.Windows.Forms.GroupBox grpInput;
+        protected System.Windows.Forms.Button btnRun;
+        protected System.Windows.Forms.GroupBox grpResult;
+        protected System.Windows.Forms.GroupBox grpCtl;
+        protected System.Windows.Forms.Button btnCrear;
+        protected System.Windows.Forms.Button btnEnd;
+        protected System.Windows.Forms.DataGridView dgv;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn idx;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn word;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn pos;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn pos1;
+        protected System.Windows.Forms.SplitContainer spl;
+        protected System.Windows.Forms.TextBox txtResult;
+
     }
 }

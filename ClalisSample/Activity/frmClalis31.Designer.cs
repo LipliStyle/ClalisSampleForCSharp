@@ -365,16 +365,16 @@
             this.btnClalisToneJson.UseVisualStyleBackColor = true;
             this.btnClalisToneJson.Click += new System.EventHandler(this.btnClalisToneJson_Click);
             // 
-            // frmMain
+            // frmClalis31
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 430);
+            this.ClientSize = new System.Drawing.Size(860, 430);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmMain";
-            this.Text = "ClalisAPI C# サンプル";
+            this.Name = "frmClalis31";
+            this.Text = "ClalisAPI3.1 C# サンプル";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

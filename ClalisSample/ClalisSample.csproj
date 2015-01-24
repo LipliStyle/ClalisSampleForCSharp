@@ -73,6 +73,54 @@
     <Compile Include="Activity\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisEmotionJson41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisEmotionJson41.Designer.cs">
+      <DependentUpon>frmClalisEmotionJson41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisMecabJson41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisMecabJson41.Designer.cs">
+      <DependentUpon>frmClalisMecabJson41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisToneEmotionJson41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisToneEmotionJson41.Designer.cs">
+      <DependentUpon>frmClalisToneEmotionJson41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisToneJson41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivityJson41\frmClalisToneJson41.Designer.cs">
+      <DependentUpon>frmClalisToneJson41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisEmotion41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisEmotion41.Designer.cs">
+      <DependentUpon>frmClalisEmotion41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisMecab41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisMecab41.Designer.cs">
+      <DependentUpon>frmClalisMecab41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisTone41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisTone41.Designer.cs">
+      <DependentUpon>frmClalisTone41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisToneEmotion41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\SubActivitySoap41\frmClalisToneEmotion41.Designer.cs">
+      <DependentUpon>frmClalisToneEmotion41.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activity\SubActivitySoap\frmClalisMecab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +267,11 @@
     </Compile>
     <Compile Include="Activity\Web\HttpPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Api41\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Api\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +378,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\Api41\Clalis.Api41.resMecabResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Api41\Clalis.wsdl" />
     <None Include="Service References\Api\Clalis.Api.resEmotional.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -358,6 +415,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Api41\" />
     <WCFMetadataStorage Include="Service References\Api\" />
   </ItemGroup>
   <ItemGroup>
@@ -371,6 +429,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Api\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api41\Clalis.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api41\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api41\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Api41\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

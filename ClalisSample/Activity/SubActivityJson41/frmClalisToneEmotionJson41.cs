@@ -1,9 +1,9 @@
 ﻿//=======================================================================
-//  ClassName : frmClalisToneJson
-//  概要      : Clalis 口調変換メソッドの使用サンプル(Json)
+//  ClassName : frmClalisToneEmotionJson41
+//  概要      : Clalis 口調変換＋感情付与メソッドの使用サンプル(Json)
 //
 //ClalisSample
-// Copyright  : 2011-2013 LipliStyle
+// Copyright  : 2011-2015 LipliStyle
 // 
 // ライセンス : MIT License
 // ・本ソフトウェアは無保証です。作者は責任を追いません。
@@ -36,109 +36,65 @@
 //OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //=======================================================================
-using System;
 using System.Collections.Specialized;
 using System.Text;
-using System.Windows.Forms;
+using Clalis.Activity.SubActivityJson;
 using Clalis.Api;
 using Clalis.Web;
 using Newtonsoft.Json;
 
-namespace Clalis.Activity.SubActivityJson
+namespace Clalis.Activity.SubActivityJson41
 {
-    public partial class frmClalisToneJson : Form
+    public partial class frmClalisToneEmotionJson41 : frmClalisToneEmotionJson
     {
         ///------------------------------------
-        ///プロパティ
-        protected string url = "";
-
-        ///------------------------------------
         ///URL定義
-        private const string API_URL = "http://liplis.mine.nu/Clalis/v30/Post/Json/ClalisTone.aspx";
+        private const string API_URL = "http://liplis.mine.nu/Clalis/v41/Json/ClalisToneEmotional.aspx";
 
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        #region frmClalisToneJson
-        public frmClalisToneJson()
+        public frmClalisToneEmotionJson41()
         {
             InitializeComponent();
             this.url = API_URL;
+            this.Text = "ClalisAPI4.1 C# サンプル JSON 口調変換＋感情付与";
         }
-        #endregion
-        
-        #region イベントハンドラ
-        /// <summary>
-        /// 実行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnRun_Click(object sender, EventArgs e)
-        {
-            run(this.url);
-        }
-
-        /// <summary>
-        /// クリア
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            txtInput.Text = "";
-            txtToneUrl.Text = "";
-            txtResult_.Text = "";
-            txtResult.Text = "";
-        }
-
-        /// <summary>
-        /// 終了
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
 
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        protected virtual void run(string url)
+        protected override void run(string url)
         {
             //ポストデータの作成
             NameValueCollection ps = new NameValueCollection();
             ps.Add("sentence", System.Web.HttpUtility.UrlEncode(txtInput.Text, Encoding.GetEncoding("UTF-8")));
-            ps.Add("toneFileUrl", System.Web.HttpUtility.UrlEncode(txtToneUrl.Text, Encoding.GetEncoding("UTF-8")));
+            ps.Add("tone", System.Web.HttpUtility.UrlEncode(txtToneUrl.Text, Encoding.GetEncoding("UTF-8")));
 
             //結果の取得
             string jsonText = HttpPost.sendPost(url, ps);
 
             //APIの結果受け取り用クラス
-            resTone result = JsonConvert.DeserializeObject<resTone>(jsonText);
+            string result = JsonConvert.DeserializeObject<string>(jsonText);
 
-            //結果を入れる
-            txtResult.Text = result.result;
+            //追加前にクリアしておく
+            dgv.Rows.Clear();
+
+            //1語の区切りがコロン
+            string[] bufList = result.Split(';');
+
+            //resEmotionalクラスの「resWordList」プロパティに結果が格納されています。
+            foreach (string msg in bufList)
+            {
+                //1語の対象語、感情値、レベルはカンマ区切りで表現されている。
+                string[] buf = msg.Split(',');
+
+                if (buf.Length == 3)
+                {
+                    //1個づつ取り出してデータグリッドに入れています。
+                    dgv.Rows.Add(new object[] { buf[0], buf[1], buf[2] });
+                }
+            }
 
             //テキスト表示
-            txtResult_.Text = jsonText;
+            txtResult.Text = jsonText;
         }
-
-        ///補足
-        /// サンプル内で使用されているクラスについての補足説明です。
-        ///
-        /// ---------------------------------------------------------
-        ///■resTone
-        /// 
-        ///クラス名
-        /// resTone
-        ///プロパティ
-        /// resTone
-        ///  口調変換結果
-        /// 役割 　
-        ///  口調変換結果
-        /// 
-        /// ---------------------------------------------------------
     }
 }

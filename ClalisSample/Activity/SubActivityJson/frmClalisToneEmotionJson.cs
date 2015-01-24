@@ -48,6 +48,14 @@ namespace Clalis.Activity.SubActivityJson
 {
     public partial class frmClalisToneEmotionJson : Form
     {
+        ///------------------------------------
+        ///プロパティ
+        protected string url = "";
+
+        ///------------------------------------
+        ///URL定義
+        private const string API_URL = "http://liplis.mine.nu/Clalis/v30/Post/Json/clalisToneEmotional.aspx";
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -55,6 +63,7 @@ namespace Clalis.Activity.SubActivityJson
         public frmClalisToneEmotionJson()
         {
             InitializeComponent();
+            this.url = API_URL;
         }
         #endregion
         
@@ -67,7 +76,7 @@ namespace Clalis.Activity.SubActivityJson
         /// <param name="e"></param>
         private void btnRun_Click(object sender, EventArgs e)
         {
-            run();
+            run(this.url);
         }
 
         /// <summary>
@@ -98,7 +107,7 @@ namespace Clalis.Activity.SubActivityJson
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private void run()
+        protected virtual void run(string url)
         {
             //ポストデータの作成
             NameValueCollection ps = new NameValueCollection();
@@ -106,7 +115,7 @@ namespace Clalis.Activity.SubActivityJson
             ps.Add("toneFileUrl", System.Web.HttpUtility.UrlEncode(txtToneUrl.Text, Encoding.GetEncoding("UTF-8")));
 
             //結果の取得
-            string jsonText = HttpPost.sendPost("http://liplis.mine.nu/Clalis/v30/Post/Json/clalisToneEmotional.aspx", ps);
+            string jsonText = HttpPost.sendPost(url, ps);
 
             //APIの結果受け取り用クラス
             resEmotional result = JsonConvert.DeserializeObject<resEmotional>(jsonText);
