@@ -23,11 +23,11 @@ namespace Clalis.Activity.SubActivitySoap41
             InitializeComponent();
         }
         #endregion
-        
+
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private override void run()
+        protected override void run()
         {
             //APIの結果受け取り用クラス。
             resMecabResult result;

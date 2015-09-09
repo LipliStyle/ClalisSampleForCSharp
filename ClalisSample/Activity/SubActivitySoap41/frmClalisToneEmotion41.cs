@@ -27,7 +27,7 @@ namespace Clalis.Activity.SubActivitySoap41
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private override void run()
+        protected override void run()
         {
             //APIの結果受け取り用クラス。
             string result;

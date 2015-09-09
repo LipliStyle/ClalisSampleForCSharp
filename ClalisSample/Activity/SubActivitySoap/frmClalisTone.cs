@@ -65,7 +65,7 @@ namespace Clalis.Activity.SubActivitySoap
         /// <summary>
         /// 実行サンプル
         /// </summary>
-        private virtual void run()
+        protected virtual void run()
         {
             //APIの結果受け取り用クラス。
             resTone result;
