@@ -286,6 +286,9 @@
     <EmbeddedResource Include="Activity\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activity\SubActivityJson41\frmClalisEmotionJson41.resx">
+      <DependentUpon>frmClalisEmotionJson41.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activity\SubActivitySoap\frmClalisMecab.resx">
       <DependentUpon>frmClalisMecab.cs</DependentUpon>
     </EmbeddedResource>
